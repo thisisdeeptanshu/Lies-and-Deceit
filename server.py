@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, url_for
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
@@ -14,6 +14,7 @@ def onguard():
 @app.route("/volon/")
 def volon():
     os.system("python volume_on.py")
+    return redirect(url_for("onguard"))
 
 @socketio.on("operationkillall")
 def killall_ops(data):
