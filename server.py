@@ -11,6 +11,10 @@ socketio = SocketIO(app)
 def onguard():
     return render_template("index.html")
 
+@app.route("/volon/")
+def volon():
+    os.system("python volume_on.py")
+
 @socketio.on("operationkillall")
 def killall_ops(data):
     os.system("python volume_off.py")
