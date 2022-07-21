@@ -4,7 +4,11 @@
         var socket = io();
         socket.on("connect", function() {
             socket.emit("operationkillall", "closeallcloseall");
-        });
+        })
+        document.getElementsByTagName("button")[0].style.display = "none";
+        setTimeout(() => {
+            document.getElementsByTagName("button")[0].style.display = "block";
+        }, 5000)
     }
 </script>
 <button onclick="abortMission()" style="width: 100%;height: 100%;font-size: 64px;">Abort Lads</button>

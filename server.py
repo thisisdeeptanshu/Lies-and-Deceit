@@ -16,10 +16,14 @@ def volon():
     os.system("python volume_on.py")
     return redirect(url_for("onguard"))
 
+@app.route("/help/")
+def help():
+    return "help"
+
 @socketio.on("operationkillall")
 def killall_ops(data):
     os.system("python volume_off.py")
     os.system("python lad.py")
 
 if __name__ == "__main__":
-    socketio.run(app, host="192.168.0.129", debug=True)
+    socketio.run(app, host="69420youriphere666333", debug=True)
